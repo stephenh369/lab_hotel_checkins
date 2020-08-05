@@ -34,7 +34,7 @@ export default {
 
         eventBus.$on("booking-updated", (updatedBooking) => {
             let index = this.bookings.findIndex(booking => booking._id === updatedBooking._id)
-            this.bookings = [...this.bookings.slice(0, index), updatedBooking, ...this.bookings.slice(index + 1, -1)]
+            this.bookings = [...this.bookings.slice(0, index), updatedBooking, ...this.bookings.slice(index + 1, this.bookings.length)]
         })
     },
     components: {

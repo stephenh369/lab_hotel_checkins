@@ -1,7 +1,7 @@
 <template>
-  <div>
-      <h2>All Bookings</h2>
-    <ul>
+  <div id="bookings-list-div">
+      <h3>All Bookings</h3>
+    <ul class="bookings-div">
         <booking v-for="(booking, index) in bookings" :key="index" :booking="booking"/>
     </ul>
   </div>
@@ -45,5 +45,18 @@ export default {
 
 
 <style>
+    #bookings-list-div {
+        width: 100%;
+        height: 50%;
+        margin: auto;
+        margin-top: 50px;
+        background-color: #666;
+        color: white;
+        opacity: 0.75;
+        padding: 20px;
+    }
+    #bookings-list-div > h3 {
+        text-align: center;
+    }
 
 </style>

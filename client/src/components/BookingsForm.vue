@@ -3,11 +3,11 @@
         <h2>Add A Booking</h2>
         <div class="form-wrapper">
             <label for="name">Guest Name:</label>
-            <input type="text" id="name" v-model="name"/>
+            <input type="text" id="name" placeholder="Enter a name..." v-model="name"/>
         </div>
         <div class="form-wrapper">
             <label for="email">Guest Email:</label>
-            <input type="email" id="email" v-model="email"/>
+            <input type="email" id="email" placeholder="Enter an email address..." v-model="email"/>
         </div>
         <div class="form-wrapper">
             <label for="status">Checked In?</label>
@@ -70,6 +70,9 @@ export default {
         color: white;
         opacity: 0.75;
         padding: 20px;
+    }
+    #bookings-form > h2 {
+        text-align: center;
     }
     .form-wrapper {
         display: flex;

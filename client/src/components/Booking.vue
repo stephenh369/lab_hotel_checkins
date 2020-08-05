@@ -1,11 +1,10 @@
 <template>
     <div class="booking">
-        <h2>Name: {{booking.name}}</h2>
-        <h2>Email: {{booking.email}}</h2>
-        <h2>Check-in Status: {{booking.status}}</h2>
-
-        <button v-on:click="deleteBooking">Delete Booking</button>
-        <button v-on:click="updateStatus">Update Status</button>
+        <h4>Name: {{booking.name}}</h4>
+        <h4>Email: {{booking.email}}</h4>
+        <h4>Check-in Status: {{booking.status}}</h4>
+        <button class="btn" v-on:click="deleteBooking">Delete Booking</button>
+        <button class="btn" v-on:click="updateStatus">Update Status</button>
     </div>
 </template>
 
@@ -34,5 +33,15 @@ export default {
 </script>
 
 <style>
-
+    .booking {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .booking > .btn {
+        margin-right: 5px;
+    }
 </style>

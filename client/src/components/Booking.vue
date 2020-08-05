@@ -10,12 +10,11 @@
 
 <script>
 import { eventBus } from "@/main.js"
-import { BookingService } from "@/services/BookingService.js"
+import BookingService from "@/services/BookingService.js"
 
 export default {
     name: "booking",
     props: ["booking"],
-
 
     methods: {
         deleteBooking() {

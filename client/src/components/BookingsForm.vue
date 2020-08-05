@@ -46,6 +46,7 @@ export default {
         }
         BookingService.addBooking(booking)
         .then(res => eventBus.$emit('booking-added', res))
+        alert('Booking added!');
         }
     }
 }
@@ -55,7 +56,7 @@ export default {
     #bookings-form {
         width: 50%;
         margin: 0 auto;
-        
+
         
     }
 </style>

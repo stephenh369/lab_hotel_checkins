@@ -7,7 +7,9 @@
 </template>
 
 <script>
+import { eventBus } from '@/main.js'
 import Booking from './Booking.vue'
+import BookingService from "@/services/BookingService.js"
 
 export default {
     name: 'bookings-list',
@@ -17,7 +19,8 @@ export default {
         }
     },
     mounted() {
-        this.fetchBookings();
+        BookingService.fetchBookings()
+        .then(bookings => this.bookings = bookings);
         eventBus.$on("booking-added", (booking) => {
             this.bookings.push(booking)
         })

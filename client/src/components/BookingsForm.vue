@@ -3,11 +3,11 @@
         <h2>Add A Booking</h2>
         <div class="form-wrapper">
             <label for="name">Guest Name:</label>
-            <input type="text" id="name" v-model="name" required/>
+            <input type="text" id="name" v-model="name"/>
         </div>
         <div class="form-wrapper">
             <label for="email">Guest Email:</label>
-            <input type="email" id="email" v-model="email" required/>
+            <input type="email" id="email" v-model="email"/>
         </div>
         <div class="form-wrapper">
             <label for="status">Checked In?</label>
@@ -18,7 +18,7 @@
             </select>
         </div>
 
-        <input type="submit" value="Save Booking" id="save"/>
+        <input class="btn" type="submit" value="Save Booking" id="save"/>
     </form>
 </template>
 
@@ -38,12 +38,22 @@ export default {
 
     methods: {
         addBooking(event) { 
-            event.preventDefault()
+            event.preventDefault();
             const booking = {
                 name: this.name,
                 email: this.email,
                 status: this.status
-        }
+            }
+            if (booking.name === "") {
+                return alert('Guest name required')
+            };
+            if (booking.email === "") {
+                return alert('Guest email required')
+            };
+            if (booking.status === "") {
+                return alert('Check-in status required')
+            };
+
         BookingService.addBooking(booking)
         .then(res => eventBus.$emit('booking-added', res))
         alert('Booking added!');
@@ -56,7 +66,26 @@ export default {
     #bookings-form {
         width: 50%;
         margin: 0 auto;
-
-        
+        justify-content: center;
+        align-items: center;
+        background-color: #666;
+        color: white;
+        opacity: 0.75;
+    }
+    .form-wrapper {
+        display: flex;
+        flex-direction: column;
+        margin: 10px 0;
+    }
+    .form-wrapper > input{
+        background-color: transparent;
+        color: white;
+        border: none;
+        border-bottom: 2px white solid;
+        width: 50%;
+    }
+    .form-wrapper > select {
+        width: 20%;
+        background-color: #f4f4f4;
     }
 </style>

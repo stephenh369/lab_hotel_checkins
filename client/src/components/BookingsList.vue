@@ -1,5 +1,6 @@
 <template>
   <div>
+      <h2>All Bookings</h2>
     <ul>
         <booking v-for="(booking, index) in bookings" :key="index" :booking="booking"/>
     </ul>
@@ -21,6 +22,7 @@ export default {
     mounted() {
         BookingService.fetchBookings()
         .then(bookings => this.bookings = bookings);
+        
         eventBus.$on("booking-added", (booking) => {
             this.bookings.push(booking)
         })

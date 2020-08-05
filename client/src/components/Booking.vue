@@ -1,7 +1,7 @@
 <template>
     <div class="booking">
-        <h2>{{booking.name}}</h2>
-        <h2>{{booking.email}}</h2>
+        <h2>Name: {{booking.name}}</h2>
+        <h2>Email: {{booking.email}}</h2>
         <h2>Checked in: {{booking.status}}</h2>
 
         <button v-on:click="deleteBooking">Delete Booking</button>

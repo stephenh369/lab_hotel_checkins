@@ -53,7 +53,9 @@ export default {
 
 <style>
     #bookings-form {
+        width: 50%;
         margin: 0 auto;
+        
         
     }
 </style>

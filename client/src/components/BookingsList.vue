@@ -24,7 +24,7 @@ export default {
 
         eventBus.$on("booking-deleted", (id) => {
             let index = this.bookings.findIndex(booking => booking._id === id)
-            this.bookings.splic(index, 1)
+            this.bookings.splice(index, 1)
         })
     },
     components: {

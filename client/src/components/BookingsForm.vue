@@ -65,12 +65,11 @@ export default {
 <style>
     #bookings-form {
         width: 50%;
-        margin: 0 auto;
-        justify-content: center;
-        align-items: center;
+        margin: 10px auto;
         background-color: #666;
         color: white;
         opacity: 0.75;
+        padding: 20px;
     }
     .form-wrapper {
         display: flex;

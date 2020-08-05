@@ -22,7 +22,7 @@ export default {
     mounted() {
         BookingService.fetchBookings()
         .then(bookings => this.bookings = bookings);
-        
+
         eventBus.$on("booking-added", (booking) => {
             this.bookings.push(booking)
         })
@@ -30,6 +30,11 @@ export default {
         eventBus.$on("booking-deleted", (id) => {
             let index = this.bookings.findIndex(booking => booking._id === id)
             this.bookings.splice(index, 1)
+        })
+
+        eventBus.$on("booking-updated", (updatedBooking) => {
+            let index = this.bookings.findIndex(booking => booking._id === updatedBooking._id)
+            this.bookings = [...this.bookings.slice(0, index), updatedBooking, ...this.bookings.slice(index + 1, -1)]
         })
     },
     components: {

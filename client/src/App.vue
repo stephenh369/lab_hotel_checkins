@@ -34,7 +34,10 @@ body {
   background: url('./assets/hotel-image.jpeg') no-repeat;
   background-size: cover;
   background-position: center;
-  height: 100vh;
+  height: 100%;
+}
+body > img {
+  height: 100%;
 }
 /* #overlay {
   position: fixed;
